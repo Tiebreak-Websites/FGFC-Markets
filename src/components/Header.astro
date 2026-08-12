@@ -1,0 +1,40 @@
+---
+const links = [
+  { href: '#overview', label: 'Overview' },
+  { href: '#who-we-are', label: 'Who We Are' },
+  { href: '#oversight', label: 'Oversight' },
+  { href: '#what-we-offer', label: 'What We Offer' },
+  { href: '#reach-us', label: 'Reach Us' },
+];
+---
+
+<header id="site-header">
+  <div class="shell header-in">
+    <a class="brand" href="#overview" aria-label="FGFC Markets Global Ltd — back to top">
+      <img
+        src="/assets/logo-light.svg"
+        alt="FGFC Markets Global Ltd"
+        width="126"
+        height="40"
+      />
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul>
+        {links.map(({ href, label }) => (
+          <li><a href={href}>{label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <button
+      class="burger"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-nav"
+      aria-label="Open menu"
+    >
+      <span></span><span></span>
+    </button>
+  </div>
+</header>

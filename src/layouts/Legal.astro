@@ -1,0 +1,46 @@
+---
+import Base from './Base.astro';
+
+const { title, heading, kicker = 'Legal' } = Astro.props;
+---
+
+<Base title={`${heading} — FGFC Markets Global Ltd`} description={`${heading} for FGFC Markets Global Ltd.`}>
+  <header id="site-header" class="scrolled">
+    <div class="shell header-in">
+      <a class="brand" href="/" aria-label="FGFC Markets Global Ltd — home">
+        <img src="/assets/logo-light.svg" alt="FGFC Markets Global Ltd" width="126" height="40" />
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/#overview">Overview</a></li>
+          <li><a href="/#oversight">Oversight</a></li>
+          <li><a href="/#reach-us">Reach Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="legal-main">
+    <div class="shell-narrow">
+      <p class="overline">{kicker}</p>
+      <h1>{heading}</h1>
+      <p class="draft-chip">Draft template — pending legal review</p>
+
+      <div class="legal-body">
+        <slot />
+      </div>
+    </div>
+  </main>
+
+  <footer class="legal-foot">
+    <div class="shell">
+      <span>FGFC Markets Global Ltd</span>
+      <nav class="foot-links" aria-label="Legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="/cookies">Cookie Notice</a>
+        <a href="/risk-disclosure">Risk Disclosure</a>
+      </nav>
+    </div>
+  </footer>
+</Base>

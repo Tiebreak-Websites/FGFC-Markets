@@ -1,0 +1,43 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { tok } from '../lib/tokens.mjs';
+---
+
+<Legal heading="Cookie Notice">
+  <p set:html={tok(
+    'This Cookie Notice explains how FGFC Markets Global Ltd (“the Company”) uses cookies and similar technologies on this website.'
+  )} />
+
+  <h2>1. What cookies are</h2>
+  <p>
+    Cookies are small text files placed on your device by a website. They are widely used
+    to make websites work, to improve their performance, and to provide usage information
+    to site operators.
+  </p>
+
+  <h2>2. Cookies used on this website</h2>
+  <p>
+    This website is a static, informational site and sets <strong>no marketing, profiling
+    or third-party advertising cookies</strong>. Only cookies or local-storage entries that
+    are strictly necessary for the website to function may be used — for example, to
+    remember a cookie-consent choice should a consent banner be introduced.
+  </p>
+
+  <h2>3. Analytics</h2>
+  <p set:html={tok(
+    'If the Company introduces analytics in the future, this notice will be updated first, and — where required under [APPLICABLE REGULATORY FRAMEWORK] or local e-privacy rules — your consent will be requested before any analytics cookie is set.'
+  )} />
+
+  <h2>4. Managing cookies</h2>
+  <p>
+    You can control and delete cookies through your browser settings. Blocking strictly
+    necessary cookies may affect how parts of a website behave.
+  </p>
+
+  <h2>5. Contact</h2>
+  <p set:html={tok(
+    'Questions about this notice can be addressed to compliance@[DOMAIN] or in writing to [FULL REGISTERED ADDRESS].'
+  )} />
+
+  <p class="note" set:html={tok('Last updated: [DATE].')} />
+</Legal>

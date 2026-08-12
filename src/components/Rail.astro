@@ -1,0 +1,18 @@
+---
+const items = [
+  { href: '#overview', no: 'I', label: 'Overview' },
+  { href: '#who-we-are', no: 'II', label: 'Who We Are' },
+  { href: '#oversight', no: 'III', label: 'Oversight' },
+  { href: '#what-we-offer', no: 'IV', label: 'What We Offer' },
+  { href: '#reach-us', no: 'V', label: 'Reach Us' },
+];
+---
+
+<nav class="rail" aria-label="Section index">
+  {items.map(({ href, no, label }) => (
+    <a href={href} aria-label={label}>
+      <span class="rl-no">{no}</span>
+      <span class="rl-tick"></span>
+    </a>
+  ))}
+</nav>

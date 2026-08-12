@@ -1,0 +1,52 @@
+---
+import { tok } from '../lib/tokens.mjs';
+import Seal from './Seal.astro';
+
+const clauses = [
+  'FGFC Markets Global Ltd is incorporated under the laws of [JURISDICTION], company number [COMPANY REGISTRATION NUMBER], and operates under the supervision of [REGULATOR FULL NAME] ([REGULATOR ABBREVIATION]), license number [LICENSE NUMBER].',
+  'The company’s operations follow [APPLICABLE REGULATORY FRAMEWORK], a framework built around disclosure obligations, fair-dealing rules and safeguards for client interests.',
+  'FGFC Markets Global Ltd files regular reporting on its capital position and risk exposure, in keeping with obligations designed to keep the wider market orderly.',
+  'Eligible clients of FGFC Markets Global Ltd are covered under the [INVESTOR COMPENSATION / GUARANTEE FUND NAME], within the limits that scheme sets.',
+  'Headquartered in [HEADQUARTERS COUNTRY], the company is permitted to offer services across: [LIST OF COUNTRIES].',
+];
+---
+
+<section id="oversight" class="sec sec-oversight" aria-labelledby="oversight-title">
+  <img
+    class="oversight-tex"
+    src="/assets/guilloche.webp"
+    alt=""
+    aria-hidden="true"
+    loading="lazy"
+    decoding="async"
+  />
+
+  <div class="shell oversight-grid">
+    <div data-reveal-group>
+      <div class="sec-head">
+        <p class="overline" data-reveal><span aria-hidden="true">III</span><span class="sr-only">Section three</span></p>
+        <p class="tagline" data-reveal>
+          A license is not decoration — it is the mechanism that keeps a brokerage accountable.
+        </p>
+        <h2 class="sec-title" id="oversight-title" data-reveal>Oversight</h2>
+      </div>
+
+      <ol class="clauses">
+        {clauses.map((clause) => (
+          <li data-reveal>
+            <p set:html={tok(clause)} />
+          </li>
+        ))}
+      </ol>
+
+      <div class="oversight-cta" data-reveal>
+        <a class="btn" href="#reach-us">Reach Us <span class="btn-arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="seal-col" data-reveal>
+      <Seal />
+      <p class="badge-line">A Licensed<br />Brokerage Firm</p>
+    </div>
+  </div>
+</section>

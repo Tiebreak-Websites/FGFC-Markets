@@ -1,0 +1,48 @@
+---
+import { tok } from '../lib/tokens.mjs';
+---
+
+<section id="who-we-are" class="sec" aria-labelledby="about-title">
+  <div class="shell about-grid">
+    <figure class="about-fig" data-reveal>
+      <div class="framed cropmarks" data-plx="0.05">
+        <i></i><i></i><i></i><i></i>
+        <img
+          src="/assets/about.webp"
+          alt="Marble columns and brass lamps inside a private banking hall at dusk"
+          loading="lazy"
+          decoding="async"
+          width="1200"
+          height="1607"
+        />
+      </div>
+      <figcaption class="fig-cap">FGFC · II</figcaption>
+    </figure>
+
+    <div class="about-copy" data-reveal-group>
+      <div class="sec-head">
+        <p class="overline" data-reveal><span aria-hidden="true">II</span><span class="sr-only">Section two</span></p>
+        <p class="tagline" data-reveal>
+          What a firm discloses matters more than what it promises.
+        </p>
+        <h2 class="sec-title" id="about-title" data-reveal>Who We Are</h2>
+      </div>
+
+      <div class="body-copy">
+        <p data-reveal set:html={tok(
+          'FGFC Markets Global Ltd holds a [LICENSE TYPE], issued under [LEGISLATIVE REFERENCE], registered as license number [LICENSE NUMBER] and supervised by [REGULATOR FULL NAME] ([REGULATOR ABBREVIATION]).'
+        )} />
+        <p data-reveal set:html={tok(
+          'Under this license, FGFC Markets Global Ltd delivers online trading access to Contracts for Difference (CFDs) spanning [ASSET CLASSES]. Every account, regardless of size or turnover, is handled under one unified set of procedures for execution and disclosure.'
+        )} />
+        <p class="note" data-reveal set:html={tok(
+          'Clients transact through the company’s market-facing brand, [BRAND NAME].'
+        )} />
+      </div>
+
+      <div class="about-cta" data-reveal>
+        <a class="btn" href="#oversight">Oversight <span class="btn-arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>

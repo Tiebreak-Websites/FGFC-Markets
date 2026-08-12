@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Rail from '../components/Rail.astro';
+import Hero from '../components/Hero.astro';
+import Ticker from '../components/Ticker.astro';
+import WhoWeAre from '../components/WhoWeAre.astro';
+import Oversight from '../components/Oversight.astro';
+import Offer from '../components/Offer.astro';
+import ReachUs from '../components/ReachUs.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base
+  title="FGFC Markets Global Ltd — A Licensed Brokerage Firm"
+  description="FGFC Markets Global Ltd provides online trading access to Contracts for Difference (CFDs) under regulatory supervision — execution technology, transparent pricing and a compliance-first service standard."
+>
+  <Header />
+  <Rail />
+
+  <main id="main-content">
+    <Hero />
+    <Ticker />
+    <WhoWeAre />
+    <Oversight />
+    <Offer />
+    <ReachUs />
+  </main>
+
+  <Footer />
+</Base>

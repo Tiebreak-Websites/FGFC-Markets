@@ -1,0 +1,55 @@
+---
+import '@fontsource/marcellus';
+import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/600.css';
+import '@fontsource/cormorant-garamond/500-italic.css';
+import '@fontsource/lora/400.css';
+import '@fontsource/lora/500.css';
+import '@fontsource/lora/400-italic.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/global.css';
+
+const {
+  title = 'FGFC Markets Global Ltd',
+  description = 'FGFC Markets Global Ltd — a licensed brokerage firm providing online trading access to Contracts for Difference (CFDs) under regulatory supervision.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#041833" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph / social. NOTE: og URLs should become absolute once the
+         production domain is confirmed — see README pre-launch checklist. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FGFC Markets Global Ltd" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/assets/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/assets/og.jpg" />
+  </head>
+  <body>
+    <a
+      class="skip-link"
+      href="#main-content"
+      style="position:absolute;left:-9999px;top:0;z-index:200;background:#bd9952;color:#041833;padding:.8em 1.4em;font-family:var(--font-caps);letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;"
+      onfocus="this.style.left='1rem';this.style.top='1rem'"
+      onblur="this.style.left='-9999px'"
+    >Skip to content</a>
+
+    <slot />
+
+    <script>
+      import '../scripts/main.js';
+    </script>
+  </body>
+</html>

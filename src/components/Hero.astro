@@ -1,0 +1,58 @@
+---
+import { tok } from '../lib/tokens.mjs';
+import Mark from './Mark.astro';
+---
+
+<section id="overview" class="hero" aria-labelledby="hero-title">
+  <div class="hero-media" aria-hidden="true">
+    <img
+      src="/assets/hero.webp"
+      srcset="/assets/hero-sm.webp 1080w, /assets/hero.webp 2560w"
+      sizes="100vw"
+      alt=""
+      fetchpriority="high"
+      decoding="async"
+    />
+    <video
+      id="hero-video"
+      muted
+      loop
+      playsinline
+      preload="none"
+      poster="/assets/hero-poster.jpg"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <source data-src="/assets/hero-loop.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-shade"></div>
+    <canvas id="pulse"></canvas>
+    <Mark class="hero-ghost" />
+  </div>
+
+  <div class="shell hero-in" data-reveal-group>
+    <p class="tagline" data-reveal>
+      An investment firm is only as sound as the paperwork nobody sees.
+    </p>
+
+    <h1 class="hero-title" id="hero-title">
+      <span class="ht-main" data-reveal>FGFC</span>
+      <span class="ht-rule rule" data-reveal aria-hidden="true"></span>
+      <span class="ht-sub" data-reveal>Markets Global Ltd</span>
+    </h1>
+
+    <p class="hero-body" data-reveal set:html={tok(
+      'Founded in [YEAR] and operating out of [JURISDICTION], FGFC Markets Global Ltd holds authorisation from the [REGULATOR FULL NAME] under license reference [LICENSE NUMBER].'
+    )} />
+
+    <div class="hero-cta" data-reveal>
+      <a class="btn" href="#who-we-are">Who We Are <span class="btn-arr" aria-hidden="true">→</span></a>
+      <a class="quiet-link" href="#reach-us">Reach Us</a>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="cue-line"></span>
+    <span class="cue-txt">Scroll</span>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+// Slow tape of the site's section taglines — pure atmosphere, duplicated
+// once so the CSS translateX(-50%) loop is seamless. Hidden from AT.
+const lines = [
+  'An investment firm is only as sound as the paperwork nobody sees.',
+  'What a firm discloses matters more than what it promises.',
+  'A license is not decoration — it is the mechanism that keeps a brokerage accountable.',
+  'Access to a market is worth little without the infrastructure to act on it.',
+  'Getting hold of a broker shouldn’t be harder than opening a position.',
+];
+---
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    {[0, 1].map(() => (
+      <div class="ticker-item">
+        {lines.map((line) => (
+          <>
+            <span>{line}</span>
+            <span class="tick-sep">◆</span>
+          </>
+        ))}
+      </div>
+    ))}
+  </div>
+</div>

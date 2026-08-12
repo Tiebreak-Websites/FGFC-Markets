@@ -1,0 +1,61 @@
+---
+import { tok } from '../lib/tokens.mjs';
+
+const entries = [
+  {
+    no: 'I',
+    title: 'Execution',
+    body: 'Execution technology that holds up under load.',
+  },
+  {
+    no: 'II',
+    title: 'Transparent Pricing',
+    body: 'Pricing that stays visible before and after a trade.',
+  },
+  {
+    no: 'III',
+    title: 'Service Standard',
+    body: 'A service standard drawn from [X YEARS] of hands-on market experience across [REGIONS SERVED].',
+  },
+];
+---
+
+<section id="what-we-offer" class="sec sec-offer" aria-labelledby="offer-title">
+  <div class="shell">
+    <div class="sec-head" data-reveal-group>
+      <p class="overline" data-reveal><span aria-hidden="true">IV</span><span class="sr-only">Section four</span></p>
+      <p class="tagline" data-reveal>
+        Access to a market is worth little without the infrastructure to act on it.
+      </p>
+      <h2 class="sec-title" id="offer-title" data-reveal>What We Offer</h2>
+    </div>
+
+    <div class="offer-grid">
+      <div data-reveal-group>
+        <p class="offer-intro" data-reveal set:html={tok(
+          'FGFC Markets Global Ltd gives traders a route into global markets through CFDs covering [ASSET CLASSES].'
+        )} />
+        <p class="offer-anchor-note" data-reveal>Three things anchor the offering —</p>
+      </div>
+
+      <div data-reveal-group>
+        <ol class="ledger">
+          {entries.map(({ no, title, body }) => (
+            <li data-reveal>
+              <span class="entry-no" aria-hidden="true">{no}</span>
+              <div>
+                <h3>{title}</h3>
+                <p set:html={tok(body)} />
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <p class="offer-close body-copy" data-reveal>
+          Compliance isn’t treated as a department bolted onto trading operations — the two
+          run on the same track, so platform stability and regulatory duty move together.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

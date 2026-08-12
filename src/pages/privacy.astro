@@ -1,0 +1,56 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { tok } from '../lib/tokens.mjs';
+---
+
+<Legal heading="Privacy Policy">
+  <p set:html={tok(
+    'This Privacy Policy explains how FGFC Markets Global Ltd (“the Company”, “we”, “us”), a company incorporated under the laws of [JURISDICTION] with registered office at [FULL REGISTERED ADDRESS], collects, uses and protects personal data obtained through this website.'
+  )} />
+
+  <h2>1. Data we collect</h2>
+  <p>
+    Through this website we collect only the information you choose to submit via the
+    contact form: your first name, last name, email address, the subject of your inquiry
+    and the content of your message. Standard technical data (such as IP address, browser
+    type and pages visited) may be recorded in server logs for security and diagnostic
+    purposes.
+  </p>
+
+  <h2>2. How we use it</h2>
+  <ul>
+    <li>To respond to inquiries submitted through the contact form;</li>
+    <li>To meet legal and regulatory obligations that apply to a licensed brokerage firm;</li>
+    <li>To maintain the security and integrity of this website.</li>
+  </ul>
+  <p>We do not sell personal data, and we do not use it for automated decision-making.</p>
+
+  <h2>3. Legal basis</h2>
+  <p set:html={tok(
+    'Personal data is processed on the basis of your consent (when you submit the form), the Company’s legitimate interest in operating a secure corporate website, and the legal obligations applicable to the Company under [APPLICABLE REGULATORY FRAMEWORK].'
+  )} />
+
+  <h2>4. Retention</h2>
+  <p>
+    Correspondence is retained only for as long as needed to handle your inquiry and to
+    satisfy record-keeping duties that apply to regulated firms, after which it is deleted
+    or anonymised.
+  </p>
+
+  <h2>5. Sharing</h2>
+  <p set:html={tok(
+    'Personal data may be disclosed where required by law, to the Company’s supervisory authority ([REGULATOR FULL NAME]), or to service providers who process data on our behalf under appropriate confidentiality and data-processing terms.'
+  )} />
+
+  <h2>6. Your rights</h2>
+  <p set:html={tok(
+    'Subject to applicable law, you may request access to, correction of, or deletion of your personal data, object to or restrict its processing, and lodge a complaint with the competent data-protection authority in [JURISDICTION]. To exercise these rights, contact compliance@[DOMAIN].'
+  )} />
+
+  <h2>7. Contact</h2>
+  <p set:html={tok(
+    'Questions about this policy can be addressed to compliance@[DOMAIN] or in writing to [FULL REGISTERED ADDRESS].'
+  )} />
+
+  <p class="note" set:html={tok('Last updated: [DATE].')} />
+</Legal>

@@ -1,0 +1,128 @@
+---
+import { tok } from '../lib/tokens.mjs';
+import Mark from './Mark.astro';
+
+const mails = [
+  { addr: 'support@[DOMAIN]', role: 'general queries' },
+  { addr: 'operations@[DOMAIN]', role: 'account operations' },
+  { addr: 'compliance@[DOMAIN]', role: 'regulatory / compliance' },
+  { addr: 'recruitment@[DOMAIN]', role: 'careers' },
+];
+---
+
+<section id="reach-us" class="sec sec-reach" aria-labelledby="reach-title">
+  <div class="shell reach-grid">
+    <div data-reveal-group>
+      <div class="sec-head">
+        <p class="overline" data-reveal><span aria-hidden="true">V</span><span class="sr-only">Section five</span></p>
+        <p class="tagline" data-reveal>
+          Getting hold of a broker shouldn’t be harder than opening a position.
+        </p>
+        <h2 class="sec-title" id="reach-title" data-reveal>Reach Us</h2>
+      </div>
+
+      <div class="office-block" data-reveal>
+        <h3>Registered Office</h3>
+        <dl class="office-rows">
+          <div>
+            <dt>Address</dt>
+            <dd set:html={tok('[FULL REGISTERED ADDRESS]')} />
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd set:html={tok('[PHONE NUMBER]')} />
+          </div>
+          <div>
+            <dt>Fax</dt>
+            <dd set:html={tok('[FAX NUMBER]')} />
+          </div>
+        </dl>
+      </div>
+
+      <div class="mail-block" data-reveal>
+        <h3>Email</h3>
+        <ul class="mail-rows">
+          {mails.map(({ addr, role }) => (
+            <li>
+              <span class="mail-addr" set:html={tok(addr)} />
+              <span class="mail-role">— {role}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <figure class="reach-fig framed" data-reveal>
+        <img
+          src="/assets/office.webp"
+          alt="Executive office at dusk overlooking a city skyline through brass-framed windows"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="1073"
+        />
+      </figure>
+    </div>
+
+    <div class="form-card cropmarks" id="form-card" data-reveal>
+      <i></i><i></i><i></i><i></i>
+
+      <h3 class="form-title">Write to us</h3>
+      <p class="form-sub">For any general inquiries, please fill in the following contact form.</p>
+
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-first">First Name <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-first" name="first_name" type="text" autocomplete="given-name" required />
+            <p class="err" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="f-last">Last Name <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-last" name="last_name" type="text" autocomplete="family-name" required />
+            <p class="err" role="alert"></p>
+          </div>
+
+          <div class="field field--full">
+            <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required />
+            <p class="err" role="alert"></p>
+          </div>
+
+          <div class="field field--full">
+            <label for="f-subject">Subject <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-subject" name="subject" type="text" required />
+            <p class="err" role="alert"></p>
+          </div>
+
+          <div class="field field--full">
+            <label for="f-message">Message <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="f-message" name="message" rows="5" required></textarea>
+            <p class="err" role="alert"></p>
+          </div>
+
+          <!-- honeypot — humans never see or fill this -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="f-company">Company</label>
+            <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="form-foot">
+          <button class="btn btn--ink" type="submit">
+            <span class="btn-label">Submit</span>
+            <span class="btn-arr" aria-hidden="true">→</span>
+          </button>
+          <p class="form-note">Fields marked * are required</p>
+        </div>
+      </form>
+
+      <div class="form-success" tabindex="-1" role="status">
+        <Mark class="seal-mini" />
+        <h3>Thank you — message recorded.</h3>
+        <p>Our team will come back to you as soon as possible.</p>
+        <span class="form-note">Demo build — connect a form endpoint before launch (see README)</span>
+      </div>
+    </div>
+  </div>
+</section>

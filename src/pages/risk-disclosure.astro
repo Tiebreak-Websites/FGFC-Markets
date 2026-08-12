@@ -1,0 +1,65 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { tok } from '../lib/tokens.mjs';
+---
+
+<Legal heading="Risk Disclosure" kicker="Disclosure">
+  <p set:html={tok(
+    'FGFC Markets Global Ltd (“the Company”) holds a [LICENSE TYPE], license number [LICENSE NUMBER], under supervision of [REGULATOR FULL NAME] in [JURISDICTION]. This document summarises the principal risks of trading Contracts for Difference (“CFDs”). It does not list every risk, and it does not replace independent advice.'
+  )} />
+
+  <h2>1. Leverage</h2>
+  <p>
+    CFDs are leveraged instruments. A small movement in the price of the underlying asset
+    produces a proportionally larger movement in the value of your position — in your
+    favour or against you. Price movements can erode a position quickly, and in some
+    jurisdictions losses may exceed the funds deposited.
+  </p>
+
+  <h2>2. Suitability</h2>
+  <p>
+    CFDs will not suit every investor. Before opening an account, satisfy yourself that
+    you understand how these instruments behave, weigh whether your financial
+    circumstances can absorb this level of risk, and consult an independent adviser where
+    needed. Commit only funds you can afford to lose in full.
+  </p>
+
+  <h2>3. Market risk</h2>
+  <p>
+    Prices of underlying assets respond to economic, political and issuer-specific events
+    that cannot be predicted. Gaps, illiquidity and volatility can prevent orders —
+    including stop orders — from executing at the requested level.
+  </p>
+
+  <h2>4. Past performance</h2>
+  <p>
+    Historical results carry no weight in predicting future outcomes, and no projection
+    issued by the Company should be read as a guarantee.
+  </p>
+
+  <h2>5. Costs and charges</h2>
+  <p>
+    Spreads, commissions, overnight financing and other charges reduce the return on a
+    position and increase the loss on an unprofitable one. Details of all applicable
+    costs are disclosed before an account is opened.
+  </p>
+
+  <h2>6. Technology risk</h2>
+  <p>
+    Online trading depends on networks, devices and software. Outages, latency or
+    failures — on your side or the Company’s — can delay or prevent order placement,
+    modification or closure.
+  </p>
+
+  <h2>7. Compensation arrangements</h2>
+  <p set:html={tok(
+    'Eligible clients of FGFC Markets Global Ltd are covered under the [INVESTOR COMPENSATION / GUARANTEE FUND NAME], within the limits that scheme sets.'
+  )} />
+
+  <h2>8. Questions</h2>
+  <p set:html={tok(
+    'Questions about this disclosure can be addressed to compliance@[DOMAIN] or in writing to [FULL REGISTERED ADDRESS].'
+  )} />
+
+  <p class="note" set:html={tok('Last updated: [DATE].')} />
+</Legal>

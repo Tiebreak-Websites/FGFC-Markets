@@ -1,0 +1,64 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { tok } from '../lib/tokens.mjs';
+---
+
+<Legal heading="Terms of Use">
+  <p set:html={tok(
+    'These Terms of Use govern access to and use of this website, operated by FGFC Markets Global Ltd (“the Company”), a company incorporated under the laws of [JURISDICTION], company number [COMPANY REGISTRATION NUMBER], holder of a [LICENSE TYPE] with license number [LICENSE NUMBER], supervised by [REGULATOR FULL NAME]. By using this website you accept these terms in full.'
+  )} />
+
+  <h2>1. Informational purpose</h2>
+  <p>
+    The content of this website is provided for general information about the Company and
+    its regulatory status. It does not constitute investment advice, a personal
+    recommendation, or an offer or solicitation to buy or sell any financial instrument.
+  </p>
+
+  <h2>2. No offer where unauthorised</h2>
+  <p>
+    Nothing on this website should be read as an offer or invitation to residents of a
+    jurisdiction where such an offer would be unauthorised.
+  </p>
+
+  <h2>3. Risk warning</h2>
+  <p>
+    Contracts for Difference (CFDs) are leveraged instruments and carry substantial risk
+    of capital loss. You should read the Company’s <a href="/risk-disclosure">Risk
+    Disclosure</a> before considering any of its services.
+  </p>
+
+  <h2>4. Intellectual property</h2>
+  <p>
+    The FGFC Markets Global Ltd name, logo and all content on this website are the
+    property of the Company or its licensors and may not be reproduced without prior
+    written consent.
+  </p>
+
+  <h2>5. Acceptable use</h2>
+  <ul>
+    <li>You may not attempt to gain unauthorised access to this website or its infrastructure;</li>
+    <li>You may not use the website to transmit unlawful, misleading or harmful content;</li>
+    <li>You may not scrape, mirror or republish the website’s content without consent.</li>
+  </ul>
+
+  <h2>6. Limitation of liability</h2>
+  <p>
+    While the Company takes care to keep the information on this website accurate and
+    current, it is provided “as is”, without warranty of any kind. To the extent permitted
+    by law, the Company accepts no liability for loss arising from reliance on this
+    website’s content or from interruptions to its availability.
+  </p>
+
+  <h2>7. Governing law</h2>
+  <p set:html={tok(
+    'These terms are governed by the laws of [JURISDICTION], and the courts of [JURISDICTION] have exclusive jurisdiction over any dispute arising from them.'
+  )} />
+
+  <h2>8. Contact</h2>
+  <p set:html={tok(
+    'Questions regarding these terms can be addressed to compliance@[DOMAIN] or in writing to [FULL REGISTERED ADDRESS].'
+  )} />
+
+  <p class="note" set:html={tok('Last updated: [DATE].')} />
+</Legal>
