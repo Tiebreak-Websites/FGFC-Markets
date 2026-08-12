@@ -13,6 +13,9 @@ const {
   title = 'FGFC Markets Global Ltd',
   description = 'FGFC Markets Global Ltd — a licensed brokerage firm providing online trading access to Contracts for Difference (CFDs) under regulatory supervision.',
 } = Astro.props;
+
+// NOTE: og:/twitter: image URLs should become absolute once the production
+// domain is confirmed — see the README pre-launch checklist.
 ---
 
 <!doctype html>
@@ -25,8 +28,6 @@ const {
     <meta name="theme-color" content="#041833" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Open Graph / social. NOTE: og URLs should become absolute once the
-         production domain is confirmed — see README pre-launch checklist. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="FGFC Markets Global Ltd" />
     <meta property="og:title" content={title} />

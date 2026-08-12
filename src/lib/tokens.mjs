@@ -21,6 +21,6 @@ export function tok(text) {
   return escapeHtml(text).replace(
     /\[([^\]]+)\]/g,
     (_, label) =>
-      `<span class="tok" title="Pending final data — to be supplied before launch">[${label}]</span>`
+      `<span class="tok" title="To be confirmed">[${label}]</span>`
   );
 }
