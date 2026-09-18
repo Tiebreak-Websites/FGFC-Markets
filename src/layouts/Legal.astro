@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import { tok } from '../lib/tokens.mjs';
 
 const { title, heading, kicker = 'Legal' } = Astro.props;
 ---
@@ -7,9 +8,12 @@ const { title, heading, kicker = 'Legal' } = Astro.props;
 <Base title={`${heading} — FGFC Markets Global Ltd`} description={`${heading} for FGFC Markets Global Ltd.`}>
   <header id="site-header" class="scrolled">
     <div class="shell header-in">
-      <a class="brand" href="/" aria-label="FGFC Markets Global Ltd — home">
-        <img src="/assets/logo-light.svg" alt="FGFC Markets Global Ltd" width="126" height="40" />
-      </a>
+      <div class="brand-block">
+        <a class="brand" href="/" aria-label="FGFC Markets Global Ltd — home">
+          <img src="/assets/logo-light.svg" alt="FGFC Markets Global Ltd" width="126" height="40" />
+        </a>
+        <p class="brand-reg" set:html={tok('Regulated by the FSC [LICENCE LINK]')} />
+      </div>
       <nav class="main-nav" aria-label="Primary">
         <ul>
           <li><a href="/#overview">Overview</a></li>

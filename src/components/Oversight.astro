@@ -1,13 +1,13 @@
 ---
-import { tok } from '../lib/tokens.mjs';
 import Seal from './Seal.astro';
 
+// Clause 1 (incorporation / company number) was removed at legal review as a
+// duplicate, and the investor-compensation clause was removed as inapplicable
+// to a Mauritius investment firm.
 const clauses = [
-  'FGFC Markets Global Ltd is incorporated under the laws of [JURISDICTION], company number [COMPANY REGISTRATION NUMBER], and operates under the supervision of [REGULATOR FULL NAME] ([REGULATOR ABBREVIATION]), license number [LICENSE NUMBER].',
-  'The company’s operations follow [APPLICABLE REGULATORY FRAMEWORK], a framework built around disclosure obligations, fair-dealing rules and safeguards for client interests.',
-  'FGFC Markets Global Ltd files regular reporting on its capital position and risk exposure, in keeping with obligations designed to keep the wider market orderly.',
-  'Eligible clients of FGFC Markets Global Ltd are covered under the [INVESTOR COMPENSATION / GUARANTEE FUND NAME], within the limits that scheme sets.',
-  'Headquartered in [HEADQUARTERS COUNTRY], the company is permitted to offer services across: [LIST OF COUNTRIES].',
+  'The company’s operations follow the framework of the Financial Services Commission (FSC) of Mauritius, a framework built around disclosure obligations, fair-dealing rules and safeguards for client interests.',
+  'FGFC Markets Global Ltd is subject to ongoing regulatory reporting and prudential requirements under the applicable FSC framework.',
+  'Headquartered in Mauritius, the company is permitted to offer services across multiple jurisdictions.',
 ];
 ---
 
@@ -26,7 +26,7 @@ const clauses = [
       <div class="sec-head">
         <p class="overline" data-reveal><span aria-hidden="true">III</span><span class="sr-only">Section three</span></p>
         <p class="tagline" data-reveal>
-          A license is not decoration — it is the mechanism that keeps a brokerage accountable.
+          A license is not decoration. It is the mechanism that keeps a firm accountable.
         </p>
         <h2 class="sec-title" id="oversight-title" data-reveal>Oversight</h2>
       </div>
@@ -34,7 +34,7 @@ const clauses = [
       <ol class="clauses">
         {clauses.map((clause) => (
           <li data-reveal>
-            <p set:html={tok(clause)} />
+            <p>{clause}</p>
           </li>
         ))}
       </ol>
@@ -46,7 +46,7 @@ const clauses = [
 
     <div class="seal-col" data-reveal>
       <Seal />
-      <p class="badge-line">A Licensed<br />Brokerage Firm</p>
+      <p class="badge-line">A Licensed<br />Investment Firm</p>
     </div>
   </div>
 </section>

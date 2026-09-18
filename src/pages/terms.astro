@@ -5,7 +5,7 @@ import { tok } from '../lib/tokens.mjs';
 
 <Legal heading="Terms of Use">
   <p set:html={tok(
-    'These Terms of Use govern access to and use of this website, operated by FGFC Markets Global Ltd (“the Company”), a company incorporated under the laws of [JURISDICTION], company number [COMPANY REGISTRATION NUMBER], holder of a [LICENSE TYPE] with license number [LICENSE NUMBER], supervised by [REGULATOR FULL NAME]. By using this website you accept these terms in full.'
+    'These Terms of Use govern access to and use of this website, operated by FGFC Markets Global Ltd (“the Company”), a company incorporated under the laws of Mauritius, company number [COMPANY REGISTRATION NUMBER], licensed and regulated by the Financial Services Commission (FSC) of Mauritius as an Investment Dealer under licence number GB25205302. By using this website you accept these terms in full.'
   )} />
 
   <h2>1. Informational purpose</h2>
@@ -51,14 +51,16 @@ import { tok } from '../lib/tokens.mjs';
   </p>
 
   <h2>7. Governing law</h2>
-  <p set:html={tok(
-    'These terms are governed by the laws of [JURISDICTION], and the courts of [JURISDICTION] have exclusive jurisdiction over any dispute arising from them.'
-  )} />
+  <p>
+    These terms are governed by the laws of Mauritius, and the courts of Mauritius have
+    exclusive jurisdiction over any dispute arising from them.
+  </p>
 
   <h2>8. Contact</h2>
-  <p set:html={tok(
-    'Questions regarding these terms can be addressed to compliance@[DOMAIN] or in writing to [FULL REGISTERED ADDRESS].'
-  )} />
+  <p>
+    Questions regarding these terms can be addressed to compliance@fgfc-markets.com or in
+    writing to Premier Business Centre, 10th Floor, Sterling Tower, 14 Poudriere Street, Port Louis, Mauritius.
+  </p>
 
   <p class="note" set:html={tok('Last updated: [DATE].')} />
 </Legal>

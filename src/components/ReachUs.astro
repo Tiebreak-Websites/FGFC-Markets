@@ -3,10 +3,10 @@ import { tok } from '../lib/tokens.mjs';
 import Mark from './Mark.astro';
 
 const mails = [
-  { addr: 'support@[DOMAIN]', role: 'general queries' },
-  { addr: 'operations@[DOMAIN]', role: 'account operations' },
-  { addr: 'compliance@[DOMAIN]', role: 'regulatory / compliance' },
-  { addr: 'recruitment@[DOMAIN]', role: 'careers' },
+  { addr: 'support@fgfc-markets.com', role: 'general queries' },
+  { addr: 'operations@fgfc-markets.com', role: 'account operations' },
+  { addr: 'compliance@fgfc-markets.com', role: 'regulatory / compliance' },
+  { addr: 'recruitment@fgfc-markets.com', role: 'careers' },
 ];
 ---
 
@@ -16,7 +16,7 @@ const mails = [
       <div class="sec-head">
         <p class="overline" data-reveal><span aria-hidden="true">V</span><span class="sr-only">Section five</span></p>
         <p class="tagline" data-reveal>
-          Getting hold of a broker shouldn’t be harder than opening a position.
+          Plenty of things about markets are complicated. Reaching us isn’t one of them.
         </p>
         <h2 class="sec-title" id="reach-title" data-reveal>Reach Us</h2>
       </div>
@@ -26,25 +26,30 @@ const mails = [
         <dl class="office-rows">
           <div>
             <dt>Address</dt>
-            <dd set:html={tok('[FULL REGISTERED ADDRESS]')} />
+            <dd>
+              Premier Business Centre, 10th Floor, Sterling Tower, 14 Poudriere Street,
+              Port Louis, Mauritius
+            </dd>
           </div>
           <div>
             <dt>Phone</dt>
             <dd set:html={tok('[PHONE NUMBER]')} />
           </div>
           <div>
-            <dt>Fax</dt>
-            <dd set:html={tok('[FAX NUMBER]')} />
+            <dt>Email</dt>
+            <dd>info@fgfc-markets.com</dd>
           </div>
         </dl>
       </div>
 
+      <!-- Heading was "Email"; renamed because the Registered Office block above
+           now carries its own Email row (added at legal review). -->
       <div class="mail-block" data-reveal>
-        <h3>Email</h3>
+        <h3>Department Contacts</h3>
         <ul class="mail-rows">
           {mails.map(({ addr, role }) => (
             <li>
-              <span class="mail-addr" set:html={tok(addr)} />
+              <span class="mail-addr">{addr}</span>
               <span class="mail-role">— {role}</span>
             </li>
           ))}

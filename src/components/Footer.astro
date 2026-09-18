@@ -1,11 +1,6 @@
 ---
-import { tok } from '../lib/tokens.mjs';
-
-// The [Risk Disclosure] bracket in the copy deck is a document link,
-// not a pending-data token — it points at the risk-disclosure page.
-const riskBody1 = tok(
-  'FGFC Markets Global Ltd (“the Company”) holds a [LICENSE TYPE], license number [LICENSE NUMBER], under supervision of [REGULATOR FULL NAME] in [JURISDICTION]. Contracts for Differences (“CFDs”) are leveraged instruments and carry substantial risk of capital loss; price movements can erode a position quickly, and in some jurisdictions losses may exceed the funds deposited. CFDs will not suit every investor. Before opening an account, satisfy yourself that you understand how these instruments behave, weigh whether your financial circumstances can absorb this level of risk, and consult an independent adviser where needed. Commit only funds you can afford to lose in full. Historical results carry no weight in predicting future outcomes, and no projection issued by the company should be read as a guarantee.'
-);
+// Risk notice wording as supplied by legal review. No pending tokens remain in
+// this block — do not reintroduce bracketed placeholders here.
 ---
 
 <footer id="site-footer">
@@ -16,19 +11,42 @@ const riskBody1 = tok(
     </div>
 
     <div class="risk-body">
-      <p set:html={riskBody1} />
+      <p>
+        FGFC Markets Global Ltd is licensed and regulated by the Financial Services
+        Commission (FSC) of Mauritius as an Investment Dealer under licence number
+        GB25205302.
+      </p>
+      <p>
+        Contracts for Difference (“CFDs”) are complex leveraged financial instruments and
+        involve a high risk of loss. Leverage can magnify both gains and losses, and CFDs
+        may not be suitable for all investors. Before trading, you should ensure that you
+        understand the risks involved and consider whether you can afford to sustain the
+        potential loss of your invested capital. Past performance is not a reliable
+        indicator of future results.
+      </p>
+      <p>
+        The information provided on this website is for general information purposes only
+        and does not constitute investment advice, an offer or a solicitation to enter into
+        any transaction. The Company’s products and services are not intended for any
+        person in any jurisdiction where their distribution or use would be contrary to
+        applicable law or regulation.
+      </p>
       <p>
         Nothing on this website should be read as an offer or invitation to residents of a
         jurisdiction where such an offer would be unauthorised.
       </p>
-      <p set:html={tok('This website belongs to FGFC Markets Global Ltd, [FULL REGISTERED ADDRESS].')} />
+      <p>
+        This website belongs to FGFC Markets Global Ltd, with registered address at Premier
+        Business Centre, 10th Floor, Sterling Tower, 14 Poudriere Street, Port Louis,
+        Mauritius.
+      </p>
       <p>
         Full details are available in our <a href="/risk-disclosure">Risk Disclosure</a> document.
       </p>
     </div>
 
     <div class="foot-bottom">
-      <p class="foot-copy" set:html={tok('© [YEAR] FGFC Markets Global Ltd. All rights reserved.')} />
+      <p class="foot-copy">© 2026, FGFC Markets Global Ltd. All rights reserved.</p>
 
       <nav class="foot-links" aria-label="Legal">
         <a href="/privacy">Privacy Policy</a>

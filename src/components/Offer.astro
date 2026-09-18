@@ -1,6 +1,7 @@
 ---
-import { tok } from '../lib/tokens.mjs';
-
+// Entry III previously cited a years-of-experience and regions-served claim,
+// removed at legal review (the company was established in 2025) and restated as
+// a procedural fact rather than an experience claim.
 const entries = [
   {
     no: 'I',
@@ -15,7 +16,8 @@ const entries = [
   {
     no: 'III',
     title: 'Service Standard',
-    body: 'A service standard drawn from [X YEARS] of hands-on market experience across [REGIONS SERVED].',
+    body:
+      'One set of execution and disclosure procedures, applied to every account regardless of size or turnover.',
   },
 ];
 ---
@@ -32,9 +34,10 @@ const entries = [
 
     <div class="offer-grid">
       <div data-reveal-group>
-        <p class="offer-intro" data-reveal set:html={tok(
-          'FGFC Markets Global Ltd gives traders a route into global markets through CFDs covering [ASSET CLASSES].'
-        )} />
+        <p class="offer-intro" data-reveal>
+          FGFC Markets Global Ltd gives traders a route into global markets through CFDs
+          covering Commodities, Currencies, ETFs, Indices, and Stocks.
+        </p>
         <p class="offer-anchor-note" data-reveal>Three things anchor the offering —</p>
       </div>
 
@@ -45,15 +48,15 @@ const entries = [
               <span class="entry-no" aria-hidden="true">{no}</span>
               <div>
                 <h3>{title}</h3>
-                <p set:html={tok(body)} />
+                <p>{body}</p>
               </div>
             </li>
           ))}
         </ol>
 
         <p class="offer-close body-copy" data-reveal>
-          Compliance isn’t treated as a department bolted onto trading operations — the two
-          run on the same track, so platform stability and regulatory duty move together.
+          FGFC Markets Global Ltd is subject to the regulatory requirements applicable to
+          its Investment Dealer Licence.
         </p>
       </div>
     </div>

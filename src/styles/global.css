@@ -440,6 +440,33 @@ section[id] {
   height: 33px;
 }
 
+/* brand lockup + regulatory status line */
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex: none;
+  min-width: 0;
+}
+
+.brand-reg {
+  font-family: var(--font-caps);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--gold-bright);
+  padding-left: 0.9rem;
+  border-left: 1px solid var(--gold-hair);
+}
+
+.brand-reg a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--gold-soft);
+  text-underline-offset: 3px;
+}
+
 .main-nav ul {
   display: flex;
   align-items: center;
@@ -1633,6 +1660,18 @@ html.menu-open .burger span:nth-child(2) {
 @media (max-width: 480px) {
   body {
     font-size: 1rem;
+  }
+
+  .brand-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .brand-reg {
+    padding-left: 0;
+    border-left: 0;
+    font-size: 0.56rem;
   }
 
   .hero-cta {

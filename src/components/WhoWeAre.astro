@@ -1,7 +1,3 @@
----
-import { tok } from '../lib/tokens.mjs';
----
-
 <section id="who-we-are" class="sec" aria-labelledby="about-title">
   <div class="shell about-grid">
     <figure class="about-fig" data-reveal>
@@ -23,21 +19,22 @@ import { tok } from '../lib/tokens.mjs';
       <div class="sec-head">
         <p class="overline" data-reveal><span aria-hidden="true">II</span><span class="sr-only">Section two</span></p>
         <p class="tagline" data-reveal>
-          What a firm discloses matters more than what it promises.
+          Clear disclosure supports confident, informed decisions.
         </p>
         <h2 class="sec-title" id="about-title" data-reveal>Who We Are</h2>
       </div>
 
       <div class="body-copy">
-        <p data-reveal set:html={tok(
-          'FGFC Markets Global Ltd holds a [LICENSE TYPE], issued under [LEGISLATIVE REFERENCE], registered as license number [LICENSE NUMBER] and supervised by [REGULATOR FULL NAME] ([REGULATOR ABBREVIATION]).'
-        )} />
-        <p data-reveal set:html={tok(
-          'Under this license, FGFC Markets Global Ltd delivers online trading access to Contracts for Difference (CFDs) spanning [ASSET CLASSES]. Every account, regardless of size or turnover, is handled under one unified set of procedures for execution and disclosure.'
-        )} />
-        <p class="note" data-reveal set:html={tok(
-          'Clients transact through the company’s market-facing brand, [BRAND NAME].'
-        )} />
+        <p data-reveal>
+          FGFC Markets Global Ltd is a company licensed and regulated by the Financial
+          Services Commission (FSC) of Mauritius, operating under the brand name
+          Jim, Ben &amp; Conners.
+        </p>
+        <p data-reveal>
+          Under this license, FGFC Markets Global Ltd delivers online trading access to
+          Contracts for Difference (CFDs) spanning Commodities, Currencies, ETFs, Indices,
+          and Stocks.
+        </p>
       </div>
 
       <div class="about-cta" data-reveal>

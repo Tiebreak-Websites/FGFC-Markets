@@ -4,9 +4,13 @@ import { tok } from '../lib/tokens.mjs';
 ---
 
 <Legal heading="Risk Disclosure" kicker="Disclosure">
-  <p set:html={tok(
-    'FGFC Markets Global Ltd (“the Company”) holds a [LICENSE TYPE], license number [LICENSE NUMBER], under supervision of [REGULATOR FULL NAME] in [JURISDICTION]. This document summarises the principal risks of trading Contracts for Difference (“CFDs”). It does not list every risk, and it does not replace independent advice.'
-  )} />
+  <p>
+    FGFC Markets Global Ltd (“the Company”) is licensed and regulated by the Financial
+    Services Commission (FSC) of Mauritius as an Investment Dealer under licence number
+    GB25205302. This document summarises the principal risks of trading Contracts for
+    Difference (“CFDs”). It does not list every risk, and it does not replace independent
+    advice.
+  </p>
 
   <h2>1. Leverage</h2>
   <p>
@@ -51,15 +55,11 @@ import { tok } from '../lib/tokens.mjs';
     modification or closure.
   </p>
 
-  <h2>7. Compensation arrangements</h2>
-  <p set:html={tok(
-    'Eligible clients of FGFC Markets Global Ltd are covered under the [INVESTOR COMPENSATION / GUARANTEE FUND NAME], within the limits that scheme sets.'
-  )} />
-
-  <h2>8. Questions</h2>
-  <p set:html={tok(
-    'Questions about this disclosure can be addressed to compliance@[DOMAIN] or in writing to [FULL REGISTERED ADDRESS].'
-  )} />
+  <h2>7. Questions</h2>
+  <p>
+    Questions about this disclosure can be addressed to compliance@fgfc-markets.com or in
+    writing to Premier Business Centre, 10th Floor, Sterling Tower, 14 Poudriere Street, Port Louis, Mauritius.
+  </p>
 
   <p class="note" set:html={tok('Last updated: [DATE].')} />
 </Legal>

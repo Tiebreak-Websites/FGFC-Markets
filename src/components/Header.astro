@@ -1,4 +1,6 @@
 ---
+import { tok } from '../lib/tokens.mjs';
+
 const links = [
   { href: '#overview', label: 'Overview' },
   { href: '#who-we-are', label: 'Who We Are' },
@@ -10,14 +12,20 @@ const links = [
 
 <header id="site-header">
   <div class="shell header-in">
-    <a class="brand" href="#overview" aria-label="FGFC Markets Global Ltd — back to top">
-      <img
-        src="/assets/logo-light.svg"
-        alt="FGFC Markets Global Ltd"
-        width="126"
-        height="40"
-      />
-    </a>
+    <div class="brand-block">
+      <a class="brand" href="#overview" aria-label="FGFC Markets Global Ltd — back to top">
+        <img
+          src="/assets/logo-light.svg"
+          alt="FGFC Markets Global Ltd"
+          width="126"
+          height="40"
+        />
+      </a>
+
+      <!-- Pending: once the licence URL is supplied, replace the [LICENCE LINK]
+           token with an <a href="…"> wrapping the "Regulated by the FSC" text. -->
+      <p class="brand-reg" set:html={tok('Regulated by the FSC [LICENCE LINK]')} />
+    </div>
 
     <nav class="main-nav" id="main-nav" aria-label="Primary">
       <ul>

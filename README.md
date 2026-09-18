@@ -1,8 +1,19 @@
 # FGFC Markets Global Ltd — Corporate Website
 
-Single-page corporate site for **FGFC Markets Global Ltd**, a licensed brokerage
-firm, modelled on the Vie Finance Sey / Securcap MU disclosure-site pattern and
-built to the approved copy deck (`FGFC-Markets-Global-Content.md`).
+Single-page corporate site for **FGFC Markets Global Ltd**, an investment firm
+licensed and regulated by the Financial Services Commission (FSC) of Mauritius as
+an Investment Dealer (licence GB25205302). Modelled on the Vie Finance Sey /
+Securcap MU disclosure-site pattern and built to the approved copy deck
+(`FGFC-Markets-Global-Content.md`), as amended by the legal review of
+September 2026 (`FGFC_Website Review.docx`).
+
+> **Copy is legally reviewed — do not edit site copy casually.** This is the site
+> of a regulated investment firm: content must stay factual, balanced and capable
+> of being substantiated. State facts, not promises. Avoid claims about safety,
+> protection, performance, reliability, trust or client outcomes. Present
+> regulatory status factually, never as a marketing claim, and never state what
+> the FSC guarantees, ensures or protects. Use *Investment Firm* /
+> *Investment Dealer* — never *broker* or *brokerage*.
 
 **Design concept — “The Ledger”:** private-bank restraint with an
 engraved-document motif. Deep navy canvas, antique-gold hairlines, an ivory
@@ -39,37 +50,42 @@ node scripts/qa-sections.mjs <out-dir>       # per-section screenshots
 
 ## ⚠ Pending data — replace before launch
 
-The approved copy deck deliberately leaves company data unconfirmed. Every
-pending value is rendered as a gold `[BRACKETED]` token (`.tok` spans) so it is
-impossible to miss in review. **Search the `src/` folder for `[` and replace:**
+Company data confirmed at legal review is now hard-coded in the copy. Only the
+values below remain unconfirmed; each is still rendered as a gold `[BRACKETED]`
+token (`.tok` span) so it cannot be missed. **Search `src/` for `[` to find them:**
 
-| Token | Where |
-| --- | --- |
-| `[YEAR]` | Hero, footer copyright |
-| `[JURISDICTION]` | Hero, Oversight §1, footer, legal pages |
-| `[REGULATOR FULL NAME]` / `[REGULATOR ABBREVIATION]` | Hero, Who We Are, Oversight §1, footer, privacy |
-| `[LICENSE NUMBER]` | Hero, Who We Are, Oversight §1, footer |
-| `[LICENSE TYPE]` | Who We Are, footer, risk disclosure |
-| `[LEGISLATIVE REFERENCE]` | Who We Are |
-| `[ASSET CLASSES]` | Who We Are, What We Offer |
-| `[BRAND NAME]` | Who We Are (optional paragraph) |
-| `[COMPANY REGISTRATION NUMBER]` | Oversight §1, Terms |
-| `[APPLICABLE REGULATORY FRAMEWORK]` | Oversight §2, legal pages |
-| `[INVESTOR COMPENSATION / GUARANTEE FUND NAME]` | Oversight §4, risk disclosure |
-| `[HEADQUARTERS COUNTRY]` / `[LIST OF COUNTRIES]` | Oversight §5 |
-| `[X YEARS]` / `[REGIONS SERVED]` | What We Offer |
-| `[FULL REGISTERED ADDRESS]` | Reach Us, footer, legal pages |
-| `[PHONE NUMBER]` / `[FAX NUMBER]` | Reach Us |
-| `[DOMAIN]` | Reach Us emails, legal pages |
-| `[DATE]` | Legal pages (“last updated”) |
+| Token | Where | Needed from |
+| --- | --- | --- |
+| `[LICENCE LINK]` | Header status line (`Header.astro`, `Legal.astro`) | URL of the FSC licence / register entry — then swap the token for an `<a href>` |
+| `[PHONE NUMBER]` | Reach Us → Registered Office | The number to be published |
+| `[COMPANY REGISTRATION NUMBER]` | Terms of Use, opening paragraph | Registrar of Companies number |
+| `[DATE]` | Legal pages (“last updated”) | Set when counsel signs off each page |
+
+Confirmed and applied: company name and status (Investment Dealer, FSC Mauritius,
+licence `GB25205302`), incorporation year 2025, registered address (Premier
+Business Centre, 10th Floor, Sterling Tower, 14 Poudriere Street, Port Louis,
+Mauritius), brand name (Jim, Ben & Conners), asset classes (Commodities,
+Currencies, ETFs, Indices, Stocks), email domain `fgfc-markets.com`, copyright
+year 2026.
+
+### Open questions for the client
+
+- **Email addresses.** `[DOMAIN]` was resolved to `fgfc-markets.com` from the
+  `info@fgfc-markets.com` address supplied in the review. Confirm that
+  `support@`, `operations@`, `compliance@` and `recruitment@` are live mailboxes —
+  `compliance@fgfc-markets.com` is the stated contact point on all four legal
+  pages, so it must resolve. If only `info@` exists, the role addresses in
+  `ReachUs.astro` and the legal pages need to change.
+- **Copyright year** is hard-coded to 2026 as instructed; it needs an annual
+  update (or say the word and it can be generated at build time).
 
 ## Pre-launch checklist
 
-- [ ] Replace all bracketed tokens above (then delete the `.tok` styling or keep it — the spans disappear once brackets are gone from copy)
+- [ ] Replace the four remaining bracketed tokens above (the `.tok` spans disappear once brackets are gone from copy)
 - [ ] Wire the contact form to a real endpoint (`src/scripts/main.js`, section 7 — currently a client-side demo; the success panel says so)
 - [ ] Set the production domain: `site` in `astro.config.mjs`, absolute `og:` URLs in `src/layouts/Base.astro`, `Sitemap:` line in `public/robots.txt`
 - [ ] Legal pages are **draft templates** (each carries a “pending legal review” chip) — have counsel review Privacy / Terms / Cookies / Risk Disclosure
-- [ ] Confirm the optional paragraphs kept from the deck (brand name, compensation fund) or remove them
+- [ ] Confirm the role-based email addresses resolve (see open questions above)
 - [ ] Consider a consent banner only if analytics are added (Cookie Notice already covers this)
 
 ## Structure

@@ -1,5 +1,4 @@
 ---
-import { tok } from '../lib/tokens.mjs';
 import Mark from './Mark.astro';
 ---
 
@@ -31,19 +30,16 @@ import Mark from './Mark.astro';
   </div>
 
   <div class="shell hero-in" data-reveal-group>
-    <p class="tagline" data-reveal>
-      An investment firm is only as sound as the paperwork nobody sees.
-    </p>
-
     <h1 class="hero-title" id="hero-title">
       <span class="ht-main" data-reveal>FGFC</span>
       <span class="ht-rule rule" data-reveal aria-hidden="true"></span>
       <span class="ht-sub" data-reveal>Markets Global Ltd</span>
     </h1>
 
-    <p class="hero-body" data-reveal set:html={tok(
-      'Founded in [YEAR] and operating out of [JURISDICTION], FGFC Markets Global Ltd holds authorisation from the [REGULATOR FULL NAME] under license reference [LICENSE NUMBER].'
-    )} />
+    <p class="hero-body" data-reveal>
+      Founded in 2025 and registered in Mauritius, FGFC Markets Global Ltd is regulated by
+      the Financial Services Commission (FSC) of Mauritius, under license number GB25205302.
+    </p>
 
     <div class="hero-cta" data-reveal>
       <a class="btn" href="#who-we-are">Who We Are <span class="btn-arr" aria-hidden="true">→</span></a>
