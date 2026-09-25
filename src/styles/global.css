@@ -443,8 +443,9 @@ section[id] {
 /* brand lockup + regulatory status line */
 .brand-block {
   display: flex;
-  align-items: center;
-  gap: 0.9rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
   flex: none;
   min-width: 0;
 }
@@ -456,8 +457,6 @@ section[id] {
   text-transform: uppercase;
   line-height: 1.5;
   color: var(--gold-bright);
-  padding-left: 0.9rem;
-  border-left: 1px solid var(--gold-hair);
 }
 
 .brand-reg a {
@@ -1662,15 +1661,7 @@ html.menu-open .burger span:nth-child(2) {
     font-size: 1rem;
   }
 
-  .brand-block {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.3rem;
-  }
-
   .brand-reg {
-    padding-left: 0;
-    border-left: 0;
     font-size: 0.56rem;
   }
 

@@ -56,7 +56,6 @@ token (`.tok` span) so it cannot be missed. **Search `src/` for `[` to find them
 
 | Token | Where | Needed from |
 | --- | --- | --- |
-| `[LICENCE LINK]` | Header status line (`Header.astro`, `Legal.astro`) | URL of the FSC licence / register entry — then swap the token for an `<a href>` |
 | `[PHONE NUMBER]` | Reach Us → Registered Office | The number to be published |
 | `[COMPANY REGISTRATION NUMBER]` | Terms of Use, opening paragraph | Registrar of Companies number |
 | `[DATE]` | Legal pages (“last updated”) | Set when counsel signs off each page |

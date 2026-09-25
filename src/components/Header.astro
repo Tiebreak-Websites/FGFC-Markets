@@ -1,6 +1,4 @@
 ---
-import { tok } from '../lib/tokens.mjs';
-
 const links = [
   { href: '#overview', label: 'Overview' },
   { href: '#who-we-are', label: 'Who We Are' },
@@ -21,10 +19,7 @@ const links = [
           height="40"
         />
       </a>
-
-      <!-- Pending: once the licence URL is supplied, replace the [LICENCE LINK]
-           token with an <a href="…"> wrapping the "Regulated by the FSC" text. -->
-      <p class="brand-reg" set:html={tok('Regulated by the FSC [LICENCE LINK]')} />
+      <p class="brand-reg"><a href="/documents/fgfc-fsc-licence.pdf" target="_blank" rel="noopener">FSC Regulated</a></p>
     </div>
 
     <nav class="main-nav" id="main-nav" aria-label="Primary">
